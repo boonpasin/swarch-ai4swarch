@@ -17,4 +17,4 @@ The agent writes a one-page ATAM-style review to [`outputs/3-review.md`](outputs
 
 **Don't act on the review yet.** Read it, commit it, and bring it to the review board in Part B. The board will decide which of its findings matter.
 
-- **My first impression of the AI's review** (one sentence): …
+- **My first impression of the AI's review** (one sentence): Sharper than expected and specific to this ADR: it caught that the 3-node quorum cluster doesn't protect events held in a `checkoutservice` pod's memory, and that dead-lettering after 5 attempts would turn a MailFast outage into a 500k-message DLQ. But it can only check the ADR against `docs/scenario.md`, so it can't know business or operations facts the board may bring (e.g. whether MailFast's limit can be raised or who runs RabbitMQ).
